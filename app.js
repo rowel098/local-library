@@ -11,7 +11,10 @@ var catalogRouter = require('./routes/catalog');
 var app = express();
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://127.0.0.1:27017/local_library';
+// MongoDB connection string for production, uses MLab Free
+var mongoDB = 'mongodb://rowel_098:fdfcbabdbeebf65bace9507c187fa070@ds161183.mlab.com:61183/node_library';
+// MongoDB connection string for development
+var mongoDBLocal = 'mongodb://127.0.0.1:27017/local_library';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
